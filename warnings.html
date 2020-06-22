@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Обменный пункт электронных валют</title>
+	<!-- including head parts -->
+	<!--meta-tags-->
+	<meta name="description" content="=========================DESCRIPTION">
+	<meta name="keywords" content="============================KEYWORDS">
+	<meta name="author" content="igor uhan | #netcode">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Favicon -->
+	<link rel="icon" href="logo.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+	<!-- <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png"> -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+	<!-- OG-tags -->
+	<meta property="og:title" content="========================OG TITLE">
+	<meta property="og:description" content="==================OG DESCRIPTION">
+	<meta property="og:type" content="=========================OG ARTICLE">
+	<meta property="og:image" content="========================OG IMAGE SOURCE">
+	<meta property="og:site_name" content="====================OG SITENAME">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:image:width" content="968">
+	<meta property="og:image:height" content="504">
+	<!-- fonts -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<!-- styles -->
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<!-- debuger for smartgrid (delete before production) -->
+	<div class="debuger">
+		<div>
+			<div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- including header -->
+	<header id="header" class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<form class="header-top_language">
+						<select name="lang" id="lang">
+							<option value="ru">ru</option>
+							<option value="en">en</option>
+						</select>
+					</form>
+					<div class="header-top_hidden">
+						<img src="img/h-icon4.png" alt="time">
+						<p>C 09:00 до 21:00 (без выходных)</p>
+					</div>
+					<ul class="header-top_list">
+						<li>
+							<img src="img/h-icon1.png" alt="phone">
+							<p>+79818625792</p>
+						</li>
+						<li>
+							<img src="img/h-icon2.png" alt="email">
+							<p>1-online@xmpp.jp</p>
+						</li>
+						<li>
+							<img src="img/h-icon3.png" alt="chat">
+							<p>info@1-online.ru</p>
+						</li>
+						<li>
+							<img src="img/h-icon4.png" alt="time">
+							<p>C 09:00 до 21:00 (без выходных)</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header-bot">
+			<div class="container">
+				<div class="row">
+					<div class="header-bot_logo">
+						<img src="img/logo.png" alt="1-Online">
+					</div>
+					<div class="header-bot_nav">
+						<nav>
+							<div><a href="index.html">Главная</a></div>
+							<div><a href="news.html">Новости</a></div>
+							<div><a href="reviews.html">Отзывы</a></div>
+							<div><a href="contacts.html">Контакты</a></div>
+						</nav>
+					</div>
+					<div class="header-bot_login">
+						<ul>
+							<li>
+								<i class="fas fa-sign-in-alt"></i>
+								<a id="login-show" href="">Войти</a>
+							</li>
+							<li>
+								<i class="fas fa-user-plus"></i>
+								<a id="reg-show" href="">Регистрация</a>
+							</li>
+						</ul>
+					</div>
+					<div class="menu-btn">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-menu-hidden">
+			<div class="container">
+				<div class="row">
+					<ul>
+						<li>
+							<a href="index.html">
+								Главная
+							</a>
+						</li>
+						<li>
+							<a href="news.html">
+								Новости
+							</a>
+						</li>
+						<li>
+							<a href="">
+								Отзывы
+							</a>
+						</li>
+						<li>
+							<a href="">
+								Контакты
+							</a>
+						</li>
+						<li>
+							<img src="img/h-icon1.png" alt="phone">
+							<p>+79818625792</p>
+						</li>
+						<li>
+							<img src="img/h-icon2.png" alt="email">
+							<p>1-online@xmpp.jp</p>
+						</li>
+						<li>
+							<img src="img/h-icon3.png" alt="chat">
+							<p>info@1-online.ru</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- including reg form -->
+	<div id="reg-overlay" class="reg-overlay">
+		<div class="reg-window">
+			<div class="reg-title">
+				<i class="fas fa-user-plus"></i>
+				<h2>Регистрация</h2>
+			</div>
+			<div class="reg-main">
+				<i class="fas fa-times-circle"></i>
+				<form class="reg-form" action="">
+					<label for="123">Логин</label>
+					<input type="text" name="login" id="login">
+					<label for="123">E-mail</label>
+					<input type="text" name="email" id="email">
+					<div class="pass-field">
+						<label for="123">Пароль</label>
+						<input type="password" name="pass" id="pass-reg">
+						<a href=""><i class="fas fa-eye"></i></a>
+					</div>
+					<div class="pass-field">
+						<label for="123">Подтвердите пароль</label>
+						<input type="password" name="conf-pass" id="conf-pass">
+						<a href=""><i class="fas fa-eye"></i></a>
+					</div>
+					<label for="123">Введите ответ</label>
+					<div class="check-field">
+						<input class="dis" type="text" placeholder="4" disabled>
+						<span>+</span>
+						<input class="dis" type="text" placeholder="4" disabled>
+						<span>=</span>
+						<input type="text" id="check-reg">
+					</div>
+					<a href="#">Заменить задачу</a>
+					<div class="conf-field">
+						<input id="reg-conf" type="checkbox">
+						<label for="123"><a href="#">C правилами сервиса</a> ознакомлен и согласен</label>
+					</div>
+					<input type="submit" value="Регистрация">
+					<div class="after-reg-field">
+						<p>Уже зарегистрировались?</p>
+						<a href="#">Авторизируйтесь</a>
+					</div>
+				</form>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- including login form -->
+	<div id="login-overlay" class="reg-overlay login-overlay">
+		<div class="reg-window">
+			<div class="reg-title">
+				<i class="fas fa-user-circle"></i>
+				<h2>Авторизация</h2>
+			</div>
+			<div class="reg-main">
+				<i class="fas fa-times-circle"></i>
+				<form class="reg-form" action="">
+					<label for="123">Логин или E-mail</label>
+					<input type="text" name="login" id="login_or_mail">
+					<div class="pass-field">
+						<label for="123">Пароль</label>
+						<input type="password" name="pass" id="pass">
+						<a href=""><i class="fas fa-eye"></i></a>
+					</div>
+					<label for="123">Введите ответ</label>
+					<div class="check-field">
+						<input class="dis" type="text" placeholder="4" disabled>
+						<span>+</span>
+						<input class="dis" type="text" placeholder="4" disabled>
+						<span>=</span>
+						<input type="text" id="check">
+					</div>
+					<a href="#">Заменить задачу</a>
+					<input type="submit" value="Войти">
+					<div class="after-reg-field">
+						<p>Уже зарегистрировались?</p>
+						<a href="#">Авторизируйтесь</a>
+					</div>
+				</form>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- content here -->
+	<section id="page-content" class="page-content">
+		<div class="container">
+			<div class="page-content_wrapper">
+
+				<!-- including sidebar-login -->
+				<div class="page-content_sidebar-login" >
+					<div class="page-content_title">
+						<i class="fas fa-user-circle"></i>
+						<h2>Личный кабинет</h2>
+					</div>
+					<div class="sidebar-wrapper">
+						<div class="sidebar-content">
+							<p>
+								Для доступа к личному кабинету Вы должны авторизироваться
+							</p>
+							<a href="#" id="enter-cabinet">Войти</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- including sidebar-cabitet (dont use at this example page this page)  -->
+				<!-- //= htmlparts/sidebar-cabinet.html -->
+				
+<!-- ===============================DONT CHANGE THIS AREA============= -->
+				<div class="page-content_content">
+					<div class="page-content_title">
+						<i class="fas fa-exclamation-circle"></i>
+						<h2>Предупреждение</h2>
+					</div>
+					<div class="page-content-wrapper">
+						<div class="page-content-content">
+<!-- ===============================DONT CHANGE THIS AREA============= -->
+							<div class="warnings">
+								<span>Уважаемые клиенты!</span>
+									<p>
+										Безопасность проведения транзакций может быть поставлена под угрозу, в связи с независящими от нашего сервиса обстоятельствами. Чтобы этого не произошло, рекомендуем ознакомиться со следующими правилами конвертации электронной валюты:
+									</p>
+
+							<ul>
+								<li>- Обмен проводится только через создание заявки на сайте;</li>
+								<li>- Будьте предельно внимательны при заполнении поля «Номер счета» адресата. 	Допустив ошибку, вы отправляете собственные средства в неизвестном направлении без возможности их возврата;</li>
+								<li>- Никогда не предоставляете займы, используя «безотзывные» электронные системы оплаты. В данном случае шанс столкнуться с фактом мошенничества чрезвычайно велик. Если вам предлагается сделать оплату способом, отличным от указанного в инструкции к использованию нашего сервиса, откажитесь от выполнения платежа и сообщите о случившемся нашему специалисту. То же касается выплат по заявкам, созданным не лично вами;</li>
+								<li>- Откажитесь от проведения средств, собственниками которых являются третьи лица, через собственные банковские счета. Известны случаи, когда проведение таких транзакций за вознаграждение, приводило к тому, что владелец счета становился соучастником финансового преступления, не подозревая о злом умысле со стороны мошенников;</li>
+								<li>- Всегда уточняйте у сотрудника обменного сервиса информацию, приходящую на вашу почту.</li>
+							</ul>
+
+								<p>Наш сервис не предоставляет займов, не берет средства у пользователей в долг или под проценты, не принимает пожертвований. При получении сообщений подозрительного характера от нашего имени с похожих на наши либо иных реквизитов, воздержитесь от выполнения указанных там требований и сообщите о произошедшем в нашу службы поддержки.</p>
+								<p>С заботой о вашем финансовом благополучии команда 1-online.</p>
+							</div>
+							
+						
+
+<!-- ===============================DONT CHANGE THIS AREA============= -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- ===============================DONT CHANGE THIS AREA============= -->
+
+	<!-- including footer -->
+	<footer id="footer" class="footer">
+		<div class="container">
+			<div class="footer-wrapper">
+				<div class="footer-copy">
+					© 2018 One-Online.<br>
+					Все права защищены<br>
+					Developed by <a href="https://freelance.ru/netcode" class="dev-name">#netcode</a>
+				</div>
+				<div class="footer-menu">
+					<ul>
+						<li><a href="site-map.html">Карта сайта</a></li>
+						<li><a href="warnings.html">Предупредение</a></li>
+						<li><a href="site-rules.html">Правила сайта</a></li>
+					</ul>
+				</div>
+				<div class="footer-soc">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- including scripts -->
+	<script src="js/main.js"></script>
+</body>
+</html>

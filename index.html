@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Обменный пункт электронных валют</title>
+	<!-- including head parts -->
+	<!--meta-tags-->
+	<meta name="description" content="=========================DESCRIPTION">
+	<meta name="keywords" content="============================KEYWORDS">
+	<meta name="author" content="igor uhan | #netcode">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Favicon -->
+	<link rel="icon" href="logo.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+	<!-- <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png"> -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+	<!-- OG-tags -->
+	<meta property="og:title" content="========================OG TITLE">
+	<meta property="og:description" content="==================OG DESCRIPTION">
+	<meta property="og:type" content="=========================OG ARTICLE">
+	<meta property="og:image" content="========================OG IMAGE SOURCE">
+	<meta property="og:site_name" content="====================OG SITENAME">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:image:width" content="968">
+	<meta property="og:image:height" content="504">
+	<!-- fonts -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<!-- styles -->
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<!-- debuger for smartgrid (delete before production) -->
+	<div class="debuger">
+		<div>
+			<div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- including header -->
+	<header id="header" class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<form class="header-top_language">
+						<select name="lang" id="lang">
+							<option value="ru">ru</option>
+							<option value="en">en</option>
+						</select>
+					</form>
+					<div class="header-top_hidden">
+						<img src="img/h-icon4.png" alt="time">
+						<p>C 09:00 до 21:00 (без выходных)</p>
+					</div>
+					<ul class="header-top_list">
+						<li>
+							<img src="img/h-icon1.png" alt="phone">
+							<p>+79818625792</p>
+						</li>
+						<li>
+							<img src="img/h-icon2.png" alt="email">
+							<p>1-online@xmpp.jp</p>
+						</li>
+						<li>
+							<img src="img/h-icon3.png" alt="chat">
+							<p>info@1-online.ru</p>
+						</li>
+						<li>
+							<img src="img/h-icon4.png" alt="time">
+							<p>C 09:00 до 21:00 (без выходных)</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header-bot">
+			<div class="container">
+				<div class="row">
+					<div class="header-bot_logo">
+						<img src="img/logo.png" alt="1-Online">
+					</div>
+					<div class="header-bot_nav">
+						<nav>
+							<div><a href="index.html">Главная</a></div>
+							<div><a href="news.html">Новости</a></div>
+							<div><a href="reviews.html">Отзывы</a></div>
+							<div><a href="contacts.html">Контакты</a></div>
+						</nav>
+					</div>
+					<div class="header-bot_login">
+						<ul>
+							<li>
+								<i class="fas fa-sign-in-alt"></i>
+								<a id="login-show" href="">Войти</a>
+							</li>
+							<li>
+								<i class="fas fa-user-plus"></i>
+								<a id="reg-show" href="">Регистрация</a>
+							</li>
+						</ul>
+					</div>
+					<div class="menu-btn">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-menu-hidden">
+			<div class="container">
+				<div class="row">
+					<ul>
+						<li>
+							<a href="index.html">
+								Главная
+							</a>
+						</li>
+						<li>
+							<a href="news.html">
+								Новости
+							</a>
+						</li>
+						<li>
+							<a href="">
+								Отзывы
+							</a>
+						</li>
+						<li>
+							<a href="">
+								Контакты
+							</a>
+						</li>
+						<li>
+							<img src="img/h-icon1.png" alt="phone">
+							<p>+79818625792</p>
+						</li>
+						<li>
+							<img src="img/h-icon2.png" alt="email">
+							<p>1-online@xmpp.jp</p>
+						</li>
+						<li>
+							<img src="img/h-icon3.png" alt="chat">
+							<p>info@1-online.ru</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- including reg form -->
+	<div id="reg-overlay" class="reg-overlay">
+		<div class="reg-window">
+			<div class="reg-title">
+				<i class="fas fa-user-plus"></i>
+				<h2>Регистрация</h2>
+			</div>
+			<div class="reg-main">
+				<i class="fas fa-times-circle"></i>
+				<form class="reg-form" action="">
+					<label for="123">Логин</label>
+					<input type="text" name="login" id="login">
+					<label for="123">E-mail</label>
+					<input type="text" name="email" id="email">
+					<div class="pass-field">
+						<label for="123">Пароль</label>
+						<input type="password" name="pass" id="pass-reg">
+						<a href=""><i class="fas fa-eye"></i></a>
+					</div>
+					<div class="pass-field">
+						<label for="123">Подтвердите пароль</label>
+						<input type="password" name="conf-pass" id="conf-pass">
+						<a href=""><i class="fas fa-eye"></i></a>
+					</div>
+					<label for="123">Введите ответ</label>
+					<div class="check-field">
+						<input class="dis" type="text" placeholder="4" disabled>
+						<span>+</span>
+						<input class="dis" type="text" placeholder="4" disabled>
+						<span>=</span>
+						<input type="text" id="check-reg">
+					</div>
+					<a href="#">Заменить задачу</a>
+					<div class="conf-field">
+						<input id="reg-conf" type="checkbox">
+						<label for="123"><a href="#">C правилами сервиса</a> ознакомлен и согласен</label>
+					</div>
+					<input type="submit" value="Регистрация">
+					<div class="after-reg-field">
+						<p>Уже зарегистрировались?</p>
+						<a href="#">Авторизируйтесь</a>
+					</div>
+				</form>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- including login form -->
+	<div id="login-overlay" class="reg-overlay login-overlay">
+		<div class="reg-window">
+			<div class="reg-title">
+				<i class="fas fa-user-circle"></i>
+				<h2>Авторизация</h2>
+			</div>
+			<div class="reg-main">
+				<i class="fas fa-times-circle"></i>
+				<form class="reg-form" action="">
+					<label for="123">Логин или E-mail</label>
+					<input type="text" name="login" id="login_or_mail">
+					<div class="pass-field">
+						<label for="123">Пароль</label>
+						<input type="password" name="pass" id="pass">
+						<a href=""><i class="fas fa-eye"></i></a>
+					</div>
+					<label for="123">Введите ответ</label>
+					<div class="check-field">
+						<input class="dis" type="text" placeholder="4" disabled>
+						<span>+</span>
+						<input class="dis" type="text" placeholder="4" disabled>
+						<span>=</span>
+						<input type="text" id="check">
+					</div>
+					<a href="#">Заменить задачу</a>
+					<input type="submit" value="Войти">
+					<div class="after-reg-field">
+						<p>Уже зарегистрировались?</p>
+						<a href="#">Авторизируйтесь</a>
+					</div>
+				</form>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- ==================================ONLY FOR MAIN PAGE====================== -->
+	<!-- including hidden ex-give -->
+	<section id="ex-give-hidden" class="ex-give-hidden">
+		<div class="ex-give-hidden_block">
+			<img src="img/bitcoin.png" alt="bitcoin">
+			<p>Bitcoin BTC</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/dashcoin.png" alt="dashcoin">
+			<p>Dashcoin DASH</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/bitcoin.png" alt="bitcoin">
+			<p>Bitcoin BTC</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/dashcoin.png" alt="dashcoin">
+			<p>Dashcoin DASH</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-give-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+	</section>
+
+	<!-- including hidden ex-get -->
+	<section id="ex-get-hidden" class="ex-get-hidden">
+		<div class="ex-get-hidden_block">
+			<img src="img/bitcoin.png" alt="bitcoin">
+			<p>Bitcoin BTC</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/dashcoin.png" alt="dashcoin">
+			<p>Dashcoin DASH</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/bitcoin.png" alt="bitcoin">
+			<p>Bitcoin BTC</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/dashcoin.png" alt="dashcoin">
+			<p>Dashcoin DASH</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/ripple.png" alt="ripple">
+			<p>Ripple XRP</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/perfect-money.png" alt="perfect-money">
+			<p>Perfect Money USD</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+		<div class="ex-get-hidden_block">
+			<img src="img/litecoin.png" alt="litecoin">
+			<p>LiteCoin LTC</p>
+		</div>
+	</section>
+	<!-- ==================================ONLY FOR MAIN PAGE====================== -->
+
+	<!-- content here -->
+	<section id="exchange" class="exchange">
+		<div class="container">
+			<div class="ex-choose">
+				<div class="ex-choose_give">
+					<div class="ex-choose_btn ex-choose_btn-g active">Все</div>
+					<div class="ex-choose_btn ex-choose_btn-g">Руб</div>
+					<div class="ex-choose_btn ex-choose_btn-g">Usd</div>
+					<div class="ex-choose_btn ex-choose_btn-g">Coin</div>
+				</div>
+				<div class="ex-choose_get">
+					<div class="ex-choose_btn ex-choose_btn-ge active">Все</div>
+					<div class="ex-choose_btn ex-choose_btn-ge">Руб</div>
+					<div class="ex-choose_btn ex-choose_btn-ge">Usd</div>
+					<div class="ex-choose_btn ex-choose_btn-ge">Coin</div>
+				</div>
+			</div>
+			<div class="ex-main">
+				<div class="ex-main_give">
+					<div class="ex-main_title ex-main_title__give">
+						<img src="img/title-give.png" alt="">
+						<h2>Отдаете</h2>
+					</div>
+					<div class="ex-main_cont">
+						<div class="ex-main_item-give active">
+							<img src="img/bitcoin.png" alt="bitcoin">
+							<p>Bitcoin BTC</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/dashcoin.png" alt="dashcoin">
+							<p>Dashcoin DASH</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/ripple.png" alt="ripple">
+							<p>Ripple XRP</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/perfect-money.png" alt="perfect-money">
+							<p>Perfect Money USD</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/bitcoin.png" alt="bitcoin">
+							<p>Bitcoin BTC</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/dashcoin.png" alt="dashcoin">
+							<p>Dashcoin DASH</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/ripple.png" alt="ripple">
+							<p>Ripple XRP</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/perfect-money.png" alt="perfect-money">
+							<p>Perfect Money USD</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/ripple.png" alt="ripple">
+							<p>Ripple XRP</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/perfect-money.png" alt="perfect-money">
+							<p>Perfect Money USD</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/ripple.png" alt="ripple">
+							<p>Ripple XRP</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/perfect-money.png" alt="perfect-money">
+							<p>Perfect Money USD</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/ripple.png" alt="ripple">
+							<p>Ripple XRP</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/perfect-money.png" alt="perfect-money">
+							<p>Perfect Money USD</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+						</div>
+						<div class="ex-main_item-give">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+						</div>
+					</div>
+				</div>
+				<div class="ex-main_get">
+					<div class="ex-main_title ex-main_title__get">
+						<img src="img/title-get.png" alt="">
+						<h2>Получаете</h2>
+					</div>
+					<div class="ex-main_cont">
+						<div class="ex-main_item-get">
+							<img src="img/bitcoin.png" alt="bitcoin">
+							<p>Bitcoin BTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get active">
+							<img src="img/dashcoin.png" alt="dashcoin">
+							<p>Dashcoin DASH</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/ripple.png" alt="ripple">
+							<p>Ripple XRP</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/perfect-money.png" alt="perfect-money">
+							<p>Perfect Money USD</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/bitcoin.png" alt="bitcoin">
+							<p>Bitcoin BTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/dashcoin.png" alt="dashcoin">
+							<p>Dashcoin DASH</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/ripple.png" alt="ripple">
+							<p>Ripple XRP</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/perfect-money.png" alt="perfect-money">
+							<p>Perfect Money USD</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/bitcoin.png" alt="bitcoin">
+							<p>Bitcoin BTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/dashcoin.png" alt="dashcoin">
+							<p>Dashcoin DASH</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/ripple.png" alt="ripple">
+							<p>Ripple XRP</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/bitcoin.png" alt="bitcoin">
+							<p>Bitcoin BTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/dashcoin.png" alt="dashcoin">
+							<p>Dashcoin DASH</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/ripple.png" alt="ripple">
+							<p>Ripple XRP</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+						<div class="ex-main_item-get">
+							<img src="img/litecoin.png" alt="litecoin">
+							<p>LiteCoin LTC</p>
+							<p class="ex-main_value">9 999 999</p>
+						</div>
+					</div>
+				</div>
+				<div class="ex-main_end">
+					<div class="ex-main_title">
+						<img src="img/title-end.png" alt="">
+						<h2>Обмен</h2>
+					</div>
+					<div class="ex-main_cont">
+						<div class="ex-main_cont-text">
+							<p>
+								<span class="alert">Внимание!</span> Данная операция выполняется с участием курьера через кассу банка и занимает от 30 минут до 6-ти часов в рабочее время отделения банка, с момента получения необходимого количества подтверждений. Выплата по данному направлению производится только на реквизиты банков России. Сумма «получаю» должна быть кратна 100.
+							</p>
+							<p>
+								<span class="alert">Внимание!</span> Просьба узнавать все дополнительные комиссии со стороны банка до создания заявки. Сумма в заявке состоит из суммы к получению + дополнительные комиссии банка за пополнение.
+							</p>
+							<p>
+								<span class="alert">Внимание!</span> При сильном скачке курса, при длительном ожидании подтверждений сети, при не своевременной оплате — заявка может быть пересчитана по курсу на момент получения необходимого количества подтверждений сети.
+							</p>
+							<p>
+								Для получения реквизитов для оплаты, обратитесь в чат к оператору.
+							</p>
+						</div>
+
+						<div class="ex-main_cont-give">
+							<h2>
+								ОТДАЮ
+							</h2>
+							<form class="give-form" action="">
+								<div class="give-form_wallet">
+									<img src="img/bitcoin.png" alt="bitcoin">
+									<div class="give-form_choose-btn-hidden">
+										<img src="img/bitcoin.png" alt="bitcoin">
+										<p>Bitcoin BTC</p>
+										<img class="give-form_arrow" src="img/choose-arr-b.png" alt="choose">
+									</div>
+
+									<div>
+										<label for="123">Введите сумму</label>
+										<input type="text" id="give_wallet">
+									</div>
+									<span>BTC</span>
+								</div>
+								<div class="give-form_value">
+									<label for="123">Номер кошелька</label>
+									<input type="text" id="give_value">
+								</div>
+							</form>
+						</div>
+						<div class="ex-main_cont-get">
+							<h2>
+								ПОЛУЧАЮ
+							</h2>
+							<form class="get-form" action="">
+								<div class="get-form_wallet">
+									<img src="img/bitcoin.png" alt="bitcoin">
+
+									<div class="get-form_choose-btn-hidden">
+										<img src="img/perfect-money.png" alt="perfect money USD">
+										<p>Perfect Money USD</p>
+										<img class="give-form_arrow" src="img/choose-arr-b.png" alt="choose">
+									</div>
+
+									<div>
+										<label for="123">Введите сумму</label>
+										<input type="text" id="get_wallet">
+										<div class="get-form_reserve">
+											Резерв 1 021 995 $
+										</div>
+									</div>
+									<span>USD</span>
+								</div>
+								<div class="get-form_value">
+									<label for="123">Номер кошелька</label>
+									<input type="text" id="get_value">
+									<div class="get-form_price">
+										1 BTC = 9000 $
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="ex-main_cont-conts">
+							<h2>
+								ВАШИ КОНТАКТЫ
+							</h2>
+							<form class="contact-form" action="">
+								<label for="123">Ваше имя</label>
+								<input type="text" id="get_name">
+								<label for="123">Телефон</label>
+								<input type="text" id="get_tel">
+								<label for="123">E-mail</label>
+								<input type="text" id="get_mail">
+							</form>
+						</div>
+						<div class="ex-main_cont-btn">
+							<input id="ex-accept" type="checkbox">
+							<label for="123">Я согласен с <a href="#">правилами обменника</a></label>
+							<input type="submit" value="Обменять">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="about" class="about">
+		<div class="container">
+			<div class="about-row">
+				<div class="news">
+					<div class="news_title">
+						<img src="img/news-title.png" alt="">
+						<h3>
+							Последние новости
+						</h3>
+					</div>
+					<div class="news-sl-wrap">
+						<div class="news-sl-item">
+							<div class="news_subtitle">
+								<span>
+									26.01.2018
+								</span>
+								<div>
+									Новые направления обмена и время работы.
+								</div>
+							</div>
+							<div class="news_content">
+								<p>
+									Доброго времени суток.<br>
+									Рады Вам сообщить что с сегодняшнего дня мы работаем с 9 утра до 9 вечера!<br>
+									А так же мы добавили новые направления:<br>
+									-Вывод на банки(Альфа Клик, ТКС, Уралсиб, РС)<br>
+									-Qiwi
+								</p>
+								<a href="">
+									Читать далее
+								</a>
+							</div>
+						</div>
+						<div class="news-sl-item">
+							<div class="news_subtitle">
+								<span>
+									26.01.2018
+								</span>
+								<div>
+									Новые направления обмена и время работы.
+								</div>
+							</div>
+							<div class="news_content">
+								<p>
+									Доброго времени суток.<br>
+									Рады Вам сообщить что с сегодняшнего дня мы работаем с 9 утра до 9 вечера!<br>
+									А так же мы добавили новые направления:<br>
+									-Вывод на банки(Альфа Клик, ТКС, Уралсиб, РС)<br>
+									-Qiwi
+								</p>
+								<a href="one-new.html">
+									Читать далее
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="news_all">
+						<a class="btn-white" href="news.html">Все новости</a>
+					</div>
+				</div>
+				<div class="recent-ex">
+					<div class="recent-ex_title">
+						<img src="img/res-ex-title.png" alt="">
+						<h3>
+							Недавние обмены
+						</h3>
+					</div>
+					<div class="recent-ex_content">
+						<div class="recent-ex_block">
+							<div class="recent-ex_item">
+								<img src="img/ripple.png" alt="ripple">
+								<span>0.5 XRP</span>
+							</div>
+							<img src="img/res-ex-arr.png" alt="">
+							<div class="recent-ex_item">
+								<img src="img/perfect-money.png" alt="perfect-money">
+								<span>1 $</span>
+							</div>
+						</div>
+						<div class="recent-ex_block">
+							<div class="recent-ex_item">
+								<img src="img/ripple.png" alt="ripple">
+								<span>0.5 XRP</span>
+							</div>
+							<img src="img/res-ex-arr.png" alt="">
+							<div class="recent-ex_item">
+								<img src="img/perfect-money.png" alt="perfect-money">
+								<span>1 $</span>
+							</div>
+						</div>
+						<div class="recent-ex_block">
+							<div class="recent-ex_item">
+								<img src="img/ripple.png" alt="ripple">
+								<span>0.5 XRP</span>
+							</div>
+							<img src="img/res-ex-arr.png" alt="">
+							<div class="recent-ex_item">
+								<img src="img/perfect-money.png" alt="perfect-money">
+								<span>1 $</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="reviews">
+					<div class="reviews_title">
+						<img src="img/rev-title.png" alt="">
+						<h3>
+							Отзывы
+						</h3>
+					</div>
+					<a class="reviews_add" href="#">Оставить отзыв</a>
+					<div class="reviews_block">
+						<div class="reviews_block-title">
+							<div class="reviews_block-name">
+								Леонид
+							</div>
+							<div class="reviews_block-date">
+								26.01.2018 23:11
+							</div>
+						</div>
+						<div class="reviews_content">
+							Операция прошла без задержек. ФAdvCash ----><br>Яндекс. По очень хорошему…
+						</div>
+					</div>
+					<div class="reviews_block">
+						<div class="reviews_block-title">
+							<div class="reviews_block-name">
+								Георгий
+							</div>
+							<div class="reviews_block-date">
+								25.01.2018 20:32
+							</div>
+						</div>
+						<div class="reviews_content">
+							Спасибо!
+						</div>
+					</div>
+					<div class="reviews_all">
+						<a class="btn-white" href="reviews.html">Все отзывы</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="features" class="features">
+		<div class="container">
+			<div class="features-wrapper">
+				<div class="features_title">
+					<h3>Преимущества One-online</h3>
+				</div>
+				<div class="features_list">
+					<div class="features_item">
+						<h4>Онлайн поддержка</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+					</div>
+					<div class="features_item">
+						<h4>Быстрый обмен</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+					</div>
+					<div class="features_item">
+						<h4>Гарантия перевода</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- including footer -->
+	<footer id="footer" class="footer">
+		<div class="container">
+			<div class="footer-wrapper">
+				<div class="footer-copy">
+					© 2018 One-Online.<br>
+					Все права защищены<br>
+					Developed by <a href="https://freelance.ru/netcode" class="dev-name">#netcode</a>
+				</div>
+				<div class="footer-menu">
+					<ul>
+						<li><a href="site-map.html">Карта сайта</a></li>
+						<li><a href="warnings.html">Предупредение</a></li>
+						<li><a href="site-rules.html">Правила сайта</a></li>
+					</ul>
+				</div>
+				<div class="footer-soc">
+					<ul>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- including scripts -->
+	<script src="js/main.js"></script>
+</body>
+</html>
